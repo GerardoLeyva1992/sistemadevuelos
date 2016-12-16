@@ -1,14 +1,29 @@
 package edu.uacm;
 
+import java.io.File;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.xml.sax.SAXException;
 
 import edu.uacm.domain.Aeropuerto;
 import edu.uacm.domain.AeropuertoRepository;
@@ -16,6 +31,7 @@ import edu.uacm.domain.Avion;
 import edu.uacm.domain.AvionRepository;
 import edu.uacm.domain.Vuelo;
 import edu.uacm.domain.VueloRepository;
+
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -60,6 +76,7 @@ public class Application implements CommandLineRunner {
 		
        
     }
+
 
 
 }

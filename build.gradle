@@ -13,9 +13,12 @@ buildscript {
         	url("https://oss.sonatype.org/content/repositories/snapshots")
         	url("https://repo.spring.io/libs-release")
         	url("https://plugins.gradle.org/m2/")
+        	url("http://maven.apache.org")
+        	
         }
     }
     dependencies {
+    
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.2.RELEASE")
       //  classpath("net.saliman:gradle-cobertura-plugin:2.3.1")
     // classpath("io.spring.gradle:dependency-management-plugin:0.6.1.RELEASE")
@@ -27,6 +30,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 //apply plugin: 'net.saliman.cobertura'
 apply plugin: 'org.springframework.boot'
+
 jar {
     baseName = 'b'
     version  = '0.1.0'
@@ -43,7 +47,10 @@ dependencies {
 	compile("org.dbunit:dbunit:2.5.2")
 	compile("org.springframework.boot:spring-boot-starter-test") 
    	compile("com.oracle:ojdbc6:11.2.0.2.0")
+   	compile ("org.apache.httpcomponents:httpclient:4.5")
+	compile ("org.freemarker:freemarker:2.3.9")   	
   // 	compile("org.postgresql:postgresql:9.4-1200-jdbc41")
+  
    	
 }
 //task wrapper(type: Wrapper) {

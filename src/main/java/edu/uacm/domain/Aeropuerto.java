@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+
 @Table(name="aeropuerto")
 @Entity
 public class Aeropuerto {
@@ -21,9 +22,7 @@ public class Aeropuerto {
 	@NotNull
 	private String pais="Algo2";
 	
-	public Aeropuerto(){
-		
-	}
+
 	
 	public Long getIdaeropuerto() {
 		return idaeropuerto;
