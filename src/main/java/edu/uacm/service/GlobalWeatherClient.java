@@ -1,6 +1,7 @@
 package edu.uacm.service;
 
 
+import java.io.FileWriter;
 import java.io.StringWriter;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,11 +21,14 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.XML;
 import org.w3c.dom.Document;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 public class GlobalWeatherClient {
-public static void main(String[] args) {
+/*public static void main(String[] args) {
 HttpClient httpClient = null;
 try {
 // Configuración Freemarker
@@ -62,11 +66,31 @@ XPathExpression expr = xpath.compile("//GetCitiesByCountryResult");
 //Aqui se guarda el docuiemto xml
 String result = String.class.cast(expr.evaluate(XMLDoc,XPathConstants.STRING));
 Source source = new DOMSource(XMLDoc);
-Result result2 = new StreamResult(new java.io.File("Servicio"+".xml")); 
+//Result result2 = new StreamResult(new java.io.File("Servicio"+".xml")); 
 
-Transformer transformer = TransformerFactory.newInstance().newTransformer();
-transformer.transform(source, result2);
-System.out.println(result);
+
+//Transformer transformer = TransformerFactory.newInstance().newTransformer();
+//transformer.transform(source, result);
+FileWriter file2 = new FileWriter("CiudadesPais.xml");
+file2.write(result);
+file2.flush();
+file2.close();
+
+int PRETTY_PRINT_INDENT_FACTOR = 4;
+try {
+    JSONObject xmlJSONObj = XML.toJSONObject(result);
+    String jsonPrettyPrintString = xmlJSONObj.toString(PRETTY_PRINT_INDENT_FACTOR);
+    //System.out.println(jsonPrettyPrintString);
+    FileWriter file = new FileWriter("CiudadesPais.json");
+    file.write(jsonPrettyPrintString);
+    file.flush();
+    file.close();
+} catch (JSONException je) {
+  //  System.out.println(je.toString());
+}
+JSONObject soapDatainJsonObject = XML.toJSONObject(result);
+//System.out.println(soapDatainJsonObject);
+//System.out.println(result);
 //result.
 } catch (Exception e) {
 
@@ -75,5 +99,6 @@ e.printStackTrace();
 // Cierre de la conex
 if (httpClient != null) httpClient.getConnectionManager().shutdown();
 }
-}
+
+//}*/
 }
