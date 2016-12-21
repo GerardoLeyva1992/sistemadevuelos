@@ -13,7 +13,7 @@ import javax.validation.constraints.NotNull;
 public class Aeropuerto {
 	@Id
 	@NotNull
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idaeropuerto;
 	@NotNull
 	private String nombreaeropuerto;

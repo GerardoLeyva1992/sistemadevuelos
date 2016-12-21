@@ -18,7 +18,7 @@ import javax.validation.constraints.NotNull;
 public class Vuelo {
 	@Id
 	@NotNull
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	//@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long idvuelo;
 	@NotNull
 	private Date horasalida;
